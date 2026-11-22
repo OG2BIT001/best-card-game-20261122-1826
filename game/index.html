@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember Clash — Duel of the Four Embers</title>
+<link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+<div id="table">
+  <header class="topbar">
+    <h1>EMBER CLASH<small>DUEL OF THE FOUR EMBERS</small></h1>
+    <div id="score"></div>
+    <div id="turnbanner"></div>
+    <button id="mutebutton" type="button">🔊 Sound on</button>
+  </header>
+
+  <section class="heroarea">
+    <div id="foehero"></div>
+    <div id="foehand" class="hand"></div>
+  </section>
+
+  <section id="foeboard" class="board" aria-label="Rook's creatures"></section>
+
+  <div id="midline">
+    <span class="vs">⚔ VS ⚔</span>
+    <div id="gamelog"></div>
+  </div>
+
+  <section id="playerboard" class="board" aria-label="Your creatures"></section>
+
+  <section class="heroarea">
+    <div id="playerhero"></div>
+    <div id="playerhand" class="hand"></div>
+    <button id="endturn" type="button">End Turn ⏎</button>
+  </section>
+</div>
+
+<div id="titlescreen" class="overlay">
+  <div class="titlerunes"><span class="rf">▲</span><span class="rt">●</span><span class="rh">◆</span><span class="rs">■</span></div>
+  <div class="gametitle">EMBER CLASH</div>
+  <div class="subtitle">A duel of the four embers — Flame, Tide, Thorn and Stone</div>
+  <p class="tagline">An original card duel: 14 original cards, four elements told apart by
+  colour and shape, and Rook the Ember Warden, a rival who plays to win.
+  Spend embers, summon creatures, guard your hero — and burn Rook's life to zero.</p>
+  <button id="startbutton" class="bigbutton" type="button">⚔ &nbsp;Begin the Duel</button>
+  <button id="howbutton" type="button">How to play</button>
+  <div id="howto" class="hidden">
+    <b>Your turn:</b> you gain +1 max ember (up to 10), refill your embers and draw a card.<br>
+    <b>Play cards:</b> click a card in your hand. Creatures join your side of the table;
+    spells need a target — click an enemy creature or Rook himself.<br>
+    <b>Attack:</b> click one of your rested creatures, then an enemy creature or Rook.
+    Creatures rest the turn they arrive. <b>Guard</b> creatures must be destroyed before Rook can be struck.<br>
+    <b>Shield</b> soaks damage before life does. First hero to 0 life loses.<br>
+    <b>Keys:</b> 1–7 pick hand cards · Space ends your turn · Esc puts a card down.
+  </div>
+</div>
+
+<div id="endscreen" class="overlay hidden">
+  <div id="endtitle">VICTORY</div>
+  <div id="endsub"></div>
+  <div id="endstats"></div>
+  <button id="againbutton" class="bigbutton" type="button">↻ &nbsp;Duel Again</button>
+</div>
+
+<script src="src/cards.js"></script>
+<script src="src/deck.js"></script>
+<script src="src/state.js"></script>
+<script src="src/ai.js"></script>
+<script src="src/render.js"></script>
+<script src="src/audio.js"></script>
+<script src="src/shots.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>
